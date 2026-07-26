@@ -33,10 +33,10 @@ export class UsersController {
   @Serialize(UserMiniDto)
   createUser(@Body() body: CreateUserDto) {
     return this.authService.signUp(
-      body.email,
-      body.password,
       body.name,
       body.surname,
+      body.email,
+      body.password,
     );
   }
 
