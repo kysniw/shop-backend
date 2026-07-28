@@ -1,12 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from '../users/user.entity';
 
 @Entity()
 export class Order {
   @PrimaryGeneratedColumn()
   id!: number;
-
-  @Column()
-  userId!: number;
 
   @Column()
   product!: string;
@@ -16,4 +14,7 @@ export class Order {
 
   @Column()
   total!: number;
+
+  @ManyToOne(() => User, (user) => user.orders)
+  user!: User;
 }
