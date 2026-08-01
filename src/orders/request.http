@@ -1,0 +1,9 @@
+### Create Order
+POST http://localhost:3000/orders/create
+Content-Type: application/json
+
+{
+  "product": "Product 1",
+  "quantity": 2,
+  "total": 2000
+}
