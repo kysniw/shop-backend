@@ -7,3 +7,9 @@ Content-Type: application/json
   "quantity": 2,
   "total": 2000
 }
+
+### Set Order as Completed
+PATCH http://localhost:3000/orders/complete/3
+
+### Get all orders for a user
+GET http://localhost:3000/orders/my-orders

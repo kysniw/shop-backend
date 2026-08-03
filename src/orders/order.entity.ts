@@ -1,6 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { User } from '../users/user.entity';
-
 @Entity()
 export class Order {
   @PrimaryGeneratedColumn()
@@ -14,6 +13,9 @@ export class Order {
 
   @Column()
   total!: number;
+
+  @Column({ default: false })
+  completed!: boolean;
 
   @ManyToOne(() => User, (user) => user.orders)
   user!: User;

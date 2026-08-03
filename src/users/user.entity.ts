@@ -26,6 +26,9 @@ export class User {
   @Column()
   password!: string;
 
+  @Column({ default: true })
+  isAdmin!: boolean;
+
   @OneToMany(() => Order, (order) => order.user)
   orders!: Order[];
 

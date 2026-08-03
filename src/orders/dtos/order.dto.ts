@@ -1,4 +1,4 @@
-import { Expose, Transform } from 'class-transformer';
+import { Expose } from 'class-transformer';
 
 export class OrderDto {
   @Expose()
@@ -13,7 +13,9 @@ export class OrderDto {
   @Expose()
   total!: number;
 
-  @Transform(({ obj }: { obj: { user: { id: number } } }) => obj.user.id)
+  @Expose()
+  completed!: boolean;
+
   @Expose()
   userId!: number;
 }
